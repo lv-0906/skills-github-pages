@@ -1,1 +1,0 @@
-"use strict";const e=require("../../common/vendor.js");exports.getStorageSync=function(t){return e.index.getStorageSync(t)},exports.removeStorageSync=function(t){return e.index.removeStorageSync(t)},exports.setStorageSync=function(t,n){return e.index.setStorageSync(t,n)};

@@ -1,1 +1,0 @@
-<view class="{{['data-v-cb50254b', g]}}" style="{{h + ';' + i}}"><slot wx:if="{{a}}"></slot><block wx:else><view wx:if="{{b}}" class="icon iconfont icon-arrow-left icon-large data-v-cb50254b" style="{{c}}" bindtap="{{d}}"></view><view wx:if="{{e}}" class="mot-nav-bar-title data-v-cb50254b">{{f}}</view></block></view>

@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "登录",
-  "usingComponents": {
-    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
-    "change-language-popup": "../../../components/business/change-language-popup/index"
-  }
-}

@@ -1,1 +1,0 @@
-"use strict";const e=require("../../../local/index.js"),t=[{label:e.t("sub-pages.me.feature.index.12"),value:1,selected:!0},{label:e.t("sub-pages.me.feature.index.13"),value:2,selected:!1}];exports.tabDefaultOption=t;

@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "选择柜门",
-  "usingComponents": {
-    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
-    "mot-site": "../../../components/mot-site/index"
-  }
-}

@@ -1,1 +1,0 @@
-<view class="popup-header t-flex-center data-v-ec5c8936"><view wx:if="{{a}}" class="popup-header__title data-v-ec5c8936">{{b}}</view><view wx:if="{{c}}" class="popup-header__close t-flex-center data-v-ec5c8936" bindtap="{{d}}"><text class="icon iconfont icon-close data-v-ec5c8936"></text></view></view>

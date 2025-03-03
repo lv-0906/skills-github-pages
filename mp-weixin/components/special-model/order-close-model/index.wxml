@@ -1,1 +1,0 @@
-<mot-modal wx:if="{{d}}" class="r data-v-5e9dc029" u-s="{{['d']}}" u-r="OrderCloseRef" u-i="5e9dc029-0" bind:__l="__l" u-p="{{d}}"><view class="t-special-pu t-flex t-flex-col t-items-center data-v-5e9dc029"><image class="t-tip-img-content data-v-5e9dc029" src="{{a}}"/><view class="t-special-pu-name t-font-semibold data-v-5e9dc029">{{b}}</view></view></mot-modal>

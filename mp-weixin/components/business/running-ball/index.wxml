@@ -1,1 +1,0 @@
-<view class="loading data-v-e135b138"><view class="loading-body data-v-e135b138"><view class="data-v-e135b138"><view wx:if="{{a}}" class="no data-v-e135b138">{{b}}</view><view class="open data-v-e135b138">{{c}}</view></view></view><view class="loading-run run data-v-e135b138"></view></view>

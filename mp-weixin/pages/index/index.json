@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "usingComponents": {
-    "mot-modal": "../../uni_modules/mot-modal/components/mot-modal/mot-modal",
-    "app-loading": "../../components/loading/index",
-    "privacy-popup": "../../components/business/privacy-popup/index"
-  }
-}

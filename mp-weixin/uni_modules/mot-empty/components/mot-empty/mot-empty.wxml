@@ -1,1 +1,0 @@
-<view class="{{['data-v-ae4f8f2d', j]}}"><view class="{{['data-v-ae4f8f2d', d]}}"><image wx:if="{{a}}" class="data-v-ae4f8f2d" src="{{b}}" mode="widthFix" style="{{'width:' + c}}" lazy-load></image></view><view wx:if="{{e}}" class="{{['data-v-ae4f8f2d', g]}}">{{f}}</view><view wx:if="{{h}}" class="{{['data-v-ae4f8f2d', i]}}"><slot></slot></view></view>

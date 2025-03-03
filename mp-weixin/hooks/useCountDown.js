@@ -1,1 +1,0 @@
-"use strict";const e=require("../common/vendor.js");exports.useCountDown=function(t,n){const r=t,o=e.ref(t);let a;const s=()=>{a&&(clearInterval(a),a=void 0)};return e.watch(o,(e=>{0===e&&s()})),e.onUnmounted(s),{count:o,start:()=>{a&&clearInterval(a),a=setInterval((()=>{o.value>0?o.value--:(clearInterval(a),n&&n())}),1e3)},stop:s,reset:()=>{s(),o.value=r}}};

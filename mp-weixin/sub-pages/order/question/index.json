@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "遇到的问题",
-  "usingComponents": {
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
-  }
-}

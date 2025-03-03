@@ -1,1 +1,0 @@
-<waite-open wx:if="{{c}}" bindcancelPay="{{a}}" bindcheckPay="{{b}}" u-i="57fe79a8-0" bind:__l="__l" u-p="{{c}}"></waite-open><mot-modal wx:if="{{e}}" class="r" u-r="ModalRef" id="ModalRef" u-i="57fe79a8-1" bind:__l="__l" u-p="{{e}}"></mot-modal>

@@ -1,1 +1,0 @@
-"use strict";exports.deepClone=function e(t){return Array.isArray(t)?t.map((t=>e(t))):t instanceof Date?new Date(t.getTime()):t&&"object"==typeof t?Object.getOwnPropertyNames(t).reduce(((r,c)=>(Object.defineProperty(r,c,Object.getOwnPropertyDescriptor(t,c)),r[c]=e(t[c]),r)),Object.create(Object.getPrototypeOf(t))):t};

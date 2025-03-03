@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "寄件业务",
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "mot-nav-bar": "../../../uni_modules/mot-nav-bar/components/mot-nav-bar/mot-nav-bar",
-    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
-  }
-}

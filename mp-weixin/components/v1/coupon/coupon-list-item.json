@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
-    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons"
-  }
-}

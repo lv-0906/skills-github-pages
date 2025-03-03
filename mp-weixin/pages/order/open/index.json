@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "usingComponents": {
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
-    "running-ball": "../../../components/business/running-ball/index"
-  }
-}

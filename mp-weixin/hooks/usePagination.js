@@ -1,1 +1,0 @@
-"use strict";const i=require("../common/vendor.js");exports.usePagination=function({limit:t}={limit:20}){const e=i.reactive({limit:t,page:1,total:0,loading:!1,lastPage:!1});return{query:e,useSkip:()=>(e.page-1)*e.limit}};

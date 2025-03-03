@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "footer-button": "../../../../components/business/order-item/footer-button"
-  }
-}

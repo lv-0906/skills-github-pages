@@ -1,1 +1,0 @@
-<view class="container"><pick-order wx:if="{{a}}" class="r" u-r="pickOrderRef" bindfetch="{{c}}" u-i="4f8aca0d-0" bind:__l="__l" u-p="{{d}}"></pick-order><pick-empty wx:else u-i="4f8aca0d-1" bind:__l="__l" u-p="{{e||''}}"></pick-empty></view><mot-modal wx:if="{{g}}" class="r" u-r="ModalRef" id="ModalRef" u-i="4f8aca0d-2" bind:__l="__l" u-p="{{g}}"></mot-modal>

@@ -1,1 +1,0 @@
-"use strict";exports.EMIT_REFRESH_HOME="refresh_home",exports.EMIT_REFRESH_JD_ORDER="refresh_jd_order",exports.EMIT_REFRESH_ME="refresh_me",exports.EMIT_REFRESH_ORDER="refresh_order",exports.EMIT_REFRESH_PICK="refresh_pick";

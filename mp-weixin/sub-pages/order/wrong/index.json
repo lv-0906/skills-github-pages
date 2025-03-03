@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "找不到订单？",
-  "usingComponents": {
-    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
-    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
-    "call-phone": "../../../components/call-phone/index"
-  }
-}

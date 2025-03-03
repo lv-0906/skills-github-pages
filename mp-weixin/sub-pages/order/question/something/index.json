@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "柜子存在物品",
-  "usingComponents": {
-    "uni-data-checkbox": "../../../../node-modules/@dcloudio/uni-ui/lib/uni-data-checkbox/uni-data-checkbox",
-    "uni-file-picker": "../../../../node-modules/@dcloudio/uni-ui/lib/uni-file-picker/uni-file-picker",
-    "mot-button": "../../../../uni_modules/mot-button/components/mot-button/mot-button",
-    "mot-modal": "../../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
-  }
-}
