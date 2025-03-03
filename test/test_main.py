@@ -11,6 +11,7 @@ class Testorder(minium.MiniTest):
         self.logger.info("下单操作已执行 5 次，停止循环")
         print("下单操作已执行 5 次，停止循环")
         test_end_order.End_order
+        # 1
 #     def scan_result(self):
 #         mock_result = {
 #   "RequestId": "ad55ee72",
