@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "waite-open": "../../../components/business/wait-open/index"
+  }
+}

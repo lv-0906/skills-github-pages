@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "手机号录入",
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "phone-button": "../../../components/business/phone-button/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "mot-modal": "../../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "pay-rule-info": "../../../../components/v2/jd/pay-rule/index"
+  }
+}

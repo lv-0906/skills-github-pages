@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "权益升级成功",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "mot-nav-bar": "../../uni_modules/mot-nav-bar/components/mot-nav-bar/mot-nav-bar",
+    "mot-button": "../../uni_modules/mot-button/components/mot-button/mot-button"
+  }
+}

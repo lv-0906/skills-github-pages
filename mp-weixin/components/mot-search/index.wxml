@@ -1,0 +1,1 @@
+<view class="t-w-full"><mot-input wx:if="{{c}}" u-s="{{['d']}}" u-i="27064a5f-0" bind:__l="__l" bindupdateModelValue="{{b}}" u-p="{{c}}"><text class="icon iconfontcabinet motcabinet-sousuo icon-arrow icon-sousuo" bindtap="{{a}}"></text></mot-input></view>

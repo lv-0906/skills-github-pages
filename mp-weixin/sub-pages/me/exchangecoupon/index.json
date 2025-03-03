@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "优惠券",
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "mot-input": "../../../components/input/index",
+    "shop-list": "../../../components/v1/coupon/shop-list-popup",
+    "comfirm-modal": "../../../components/v1/coupon/comfirm-modal"
+  }
+}

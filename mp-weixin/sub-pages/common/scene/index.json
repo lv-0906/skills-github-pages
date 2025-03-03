@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "扫描屏幕二维码",
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "close-app": "../../../components/close-app/index"
+  }
+}

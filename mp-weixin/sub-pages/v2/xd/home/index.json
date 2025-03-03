@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "快递寄存",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "mot-nav-bar": "../../../../uni_modules/mot-nav-bar/components/mot-nav-bar/mot-nav-bar",
+    "mot-button": "../../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "uni-icons": "../../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "mot-modal": "../../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
+  }
+}

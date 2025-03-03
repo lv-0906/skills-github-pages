@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "change-language-popup": "../../../components/business/change-language-popup/index",
+    "recharge-popup": "../../../components/business/recharge-popup/index",
+    "order-item": "./components/order-item",
+    "order-empty": "./components/order-empty",
+    "slide-popup": "../../../components/business/slide-popup/index",
+    "order-open-modal": "../../../components/special-model/order-open-model/index"
+  }
+}

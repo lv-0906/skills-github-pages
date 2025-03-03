@@ -1,0 +1,1 @@
+<view class="deposit-ways data-v-dedf2a23"><view wx:for="{{a}}" wx:for-item="item" wx:key="c" class="{{['data-v-dedf2a23', 'deposit-ways-item', item.b]}}" bindtap="{{item.d}}">{{item.a}}</view></view>

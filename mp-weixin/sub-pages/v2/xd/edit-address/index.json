@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "地址信息",
+  "usingComponents": {
+    "uni-icons": "../../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "mot-button": "../../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "mot-cascader": "../../../../uni_modules/mot-cascader/components/mot-cascader/mot-cascader",
+    "mot-tip": "../../../../components/mot-tip/index"
+  }
+}

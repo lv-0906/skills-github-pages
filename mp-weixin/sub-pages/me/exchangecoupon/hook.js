@@ -1,0 +1,1 @@
+"use strict";const o=require("../../../common/vendor.js");exports.useshowComfirmConpon=()=>{const n=o.ref(!1);return{showComfirmPopup:n,openComfirmPopup:()=>{n.value=!0}}},exports.useshowConpon=()=>{const n=o.ref(!1);return{showConponPopup:n,openConponPopup:()=>{n.value=!0}}};

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "mot-empty": "../../../uni_modules/mot-empty/components/mot-empty/mot-empty",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "slide-popup": "../../../components/business/slide-popup/index",
+    "recharge-popup": "../../../components/business/recharge-popup/index",
+    "order-open-modal": "../../../components/special-model/order-open-model/index",
+    "order-item": "./components/order",
+    "recharge-item": "./components/recharge"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "快递订单",
+  "usingComponents": {
+    "mot-empty": "../../../../uni_modules/mot-empty/components/mot-empty/mot-empty",
+    "mot-modal": "../../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "mot-search": "../../../../components/mot-search/index",
+    "order-item": "./components/order-item",
+    "order-cancel-popup": "./components/order-cancel-popup",
+    "jd-order-cancel-model": "../../../../components/special-model/jd-order-cancel-model/index"
+  }
+}

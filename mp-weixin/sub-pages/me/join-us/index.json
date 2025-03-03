@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "加入我们",
+  "usingComponents": {
+    "mot-cascader": "../../../uni_modules/mot-cascader/components/mot-cascader/mot-cascader",
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
+  }
+}

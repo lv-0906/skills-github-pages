@@ -1,0 +1,1 @@
+.login.data-v-1be9c96a{display:flex;justify-content:center;align-items:center;height:100vh;background-color:#ffe500}.login .loading-text.data-v-1be9c96a{margin-bottom:100px;color:#222;animation:fade-1be9c96a 1.5s infinite}@keyframes fade-1be9c96a{0%,to{opacity:.5}50%{opacity:1}}

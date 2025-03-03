@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button"
+  }
+}

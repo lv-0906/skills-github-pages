@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "使用中心",
+  "usingComponents": {
+    "uni-collapse-item": "../../../node-modules/@dcloudio/uni-ui/lib/uni-collapse-item/uni-collapse-item",
+    "uni-collapse": "../../../node-modules/@dcloudio/uni-ui/lib/uni-collapse/uni-collapse",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "call-phone": "../../../components/call-phone/index"
+  }
+}

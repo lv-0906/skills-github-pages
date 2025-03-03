@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "权益列表",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "pre-order-popup": "./components/pre-order-popup/index"
+  }
+}

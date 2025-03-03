@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "存包",
+  "usingComponents": {
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-data-checkbox": "../../../node-modules/@dcloudio/uni-ui/lib/uni-data-checkbox/uni-data-checkbox",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "mot-site": "../../../components/mot-site/index",
+    "deposit-ways": "./components/deposit-ways",
+    "phone-button": "../../../components/business/phone-button/index",
+    "coupon-popup": "../../../components/v1/coupon/coupon-popup",
+    "coupon-exchange-popup": "../../../components/v1/coupon/coupon-exchange-popup",
+    "exchange-success-popup": "../../../components/v1/coupon/exchange-success-popup",
+    "pay-popup": "../../../components/v1/pay-popup/index"
+  }
+}

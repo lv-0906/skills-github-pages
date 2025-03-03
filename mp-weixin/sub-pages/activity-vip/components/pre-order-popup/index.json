@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mot-button": "../../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "uni-popup": "../../../../uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "popup-header": "../../../../components/popup-header/index",
+    "mot-input": "../../../../components/input/index"
+  }
+}

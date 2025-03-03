@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "支付开门",
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
+  }
+}

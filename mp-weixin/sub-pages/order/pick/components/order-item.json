@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mot-button": "../../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "uni-icons": "../../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "order-status": "../../../../components/business/order-status/index",
+    "footer-button": "../../../../components/business/order-item/footer-button"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="{{['data-v-657a1f24', 'form-item', h]}}"><view wx:if="{{a}}" class="left data-v-657a1f24"><slot name="left"></slot></view><block wx:if="{{r0}}"><input class="{{['data-v-657a1f24', 'form-input']}}" type="{{b}}" maxlength="{{c}}" placeholder="{{d}}" value="{{e}}" bindinput="{{f}}"/></block><view wx:if="{{g}}" class="right data-v-657a1f24"><slot></slot></view></view>

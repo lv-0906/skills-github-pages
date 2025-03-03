@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "优惠券",
+  "usingComponents": {
+    "mot-sticky": "../../../uni_modules/mot-sticky/components/mot-sticky/mot-sticky",
+    "mot-empty": "../../../uni_modules/mot-empty/components/mot-empty/mot-empty",
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "tabs-panel": "../../../components/tab-panel/index",
+    "coupon-list-item": "../../../components/v1/coupon/coupon-list-item"
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";const e=require("./dialog.js");let t=null;const i=()=>{t&&(clearTimeout(t),t=null,e.hideLoading())};exports.clearTimer=i,exports.startTimer=(o=.2)=>{t&&i(),t=setTimeout((()=>{e.showLoading()}),1e3*o)};

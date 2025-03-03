@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "取包",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "pick-empty": "./components/empty",
+    "pick-order": "./components/order"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="call data-v-675a2a42" bindtap="{{c}}"><text class="data-v-675a2a42">{{a}}：</text><text class="link data-v-675a2a42">{{b}}</text></view>

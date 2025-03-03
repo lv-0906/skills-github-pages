@@ -1,0 +1,158 @@
+{
+  "pages": [
+    "pages/v1/index/index",
+    "pages/index/index",
+    "pages/v1/device-type/index",
+    "pages/v1/deposit/index",
+    "pages/order/unlock/index",
+    "pages/order/open/index",
+    "pages/order/result/index",
+    "pages/v1/me/index",
+    "pages/payment/index",
+    "pages/goPrivilegeMini/index"
+  ],
+  "subPackages": [
+    {
+      "root": "sub-pages/v1",
+      "pages": [
+        "face/index"
+      ]
+    },
+    {
+      "root": "sub-pages/v2",
+      "pages": [
+        "index/index",
+        "delivery-detail/index",
+        "xd/home/index",
+        "xd/deposit/index",
+        "xd/device-type/index",
+        "xd/edit-address/index",
+        "xd/information/index",
+        "xd/result/index",
+        "xd/order/index",
+        "xd/order-detail/index",
+        "xd/rule/index"
+      ]
+    },
+    {
+      "root": "sub-pages/common",
+      "pages": [
+        "login/index",
+        "device-nearby/index",
+        "country-code/index",
+        "phone/index",
+        "authorize/index",
+        "pay/index",
+        "pay-center/index",
+        "follow/index",
+        "scene/index"
+      ]
+    },
+    {
+      "root": "sub-pages/order",
+      "pages": [
+        "rule/index",
+        "agreement/index",
+        "detail/index",
+        "forget/index",
+        "history/index",
+        "locker/index",
+        "exception/mqtt/index",
+        "wait-pos/index",
+        "pending/index",
+        "pick/index",
+        "ten/index",
+        "wrong/index",
+        "question/index",
+        "question/cabinet/index",
+        "question/something/index",
+        "question/unlock/index"
+      ]
+    },
+    {
+      "root": "sub-pages/me",
+      "pages": [
+        "coupon/index",
+        "exchangecoupon/index",
+        "profile/index",
+        "order/index",
+        "withdraw/index",
+        "buy-coupon/index",
+        "coupon-result/index",
+        "help/index",
+        "feature/index",
+        "cooperation/index",
+        "join-us/index"
+      ]
+    },
+    {
+      "root": "sub-pages/single/get-id",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "sub-pages/single/meituan",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "sub-pages/single/wuyoucun",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "sub-pages/activity-vip",
+      "pages": [
+        "buy-result",
+        "buy",
+        "webview"
+      ]
+    }
+  ],
+  "window": {
+    "onReachBottomDistance": 50,
+    "backgroundColor": "#efeff4",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "寄存柜",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#555",
+    "borderStyle": "white",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/v1/index/index",
+        "iconPath": "static/images/tabs/home.png",
+        "selectedIconPath": "static/images/tabs/home@selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/v1/me/index",
+        "iconPath": "static/images/tabs/me.png",
+        "selectedIconPath": "static/images/tabs/me@selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000
+  },
+  "embeddedAppIdList": [
+    "wx1865eb2062ce1c33"
+  ],
+  "__usePrivacyCheck__": true,
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "实名认证",
+  "usingComponents": {
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-cascader": "../../../uni_modules/mot-cascader/components/mot-cascader/mot-cascader",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal"
+  }
+}

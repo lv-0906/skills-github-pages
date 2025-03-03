@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购买成功",
+  "usingComponents": {
+    "mot-button": "../../../uni_modules/mot-button/components/mot-button/mot-button",
+    "mot-modal": "../../../uni_modules/mot-modal/components/mot-modal/mot-modal",
+    "coupon-list-item": "../../../components/v1/coupon/coupon-list-item"
+  }
+}
