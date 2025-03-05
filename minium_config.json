@@ -2,7 +2,7 @@
   "debug_mode":"info",
   "appid":"wx4100f48d9da75978",
   "platform":"ide",
-  "project_path":"D:\\Pycharmobjeck\\test-main\\mp-weixin",
+  "project_path":"D:\\mp-weixin",
   "dev_tool_path":"D:\\微信web开发者工具\\cli.bat",
   "enable_mock": true,
   "auto_authorize": true
