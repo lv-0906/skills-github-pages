@@ -82,7 +82,7 @@ class End_order(minium.MiniTest):
                 print("未弹出二次确认弹窗")
         except:
             print("未识别到订单")
-    def end_orders(self):
+    def test_end_orders(self):
         for i in range(5):
             order_card = self.page.wait_for('//view[contains(@class,"home-order-list")]',max_timeout=3)
             if order_card:
@@ -91,7 +91,6 @@ class End_order(minium.MiniTest):
                 try:
                     order_time = self.page.get_element("//view[contains(@class,'card-content')and contains(.,'分钟')]")
                     order_mi = order_time.text
-                    # 使用 :? 实现可选匹配
                     match = re.search(r'(?:(\d+)小时)?(?:(\d+)分钟)?', order_mi)
                     if match:
                         hours = int(match.group(1)) if match.group(1) else 0
