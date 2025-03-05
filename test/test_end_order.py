@@ -91,26 +91,23 @@ class End_order(minium.MiniTest):
                 try:
                     order_time = self.page.get_element("//view[contains(@class,'card-content')and contains(.,'分钟')]")
                     order_mi = order_time.text
-                    match = re.search(r'(\d+)小时(\d+)分钟',order_mi)
+                    # 使用 :? 实现可选匹配
+                    match = re.search(r'(?:(\d+)小时)?(?:(\d+)分钟)?', order_mi)
                     if match:
-                        hours   = int(match.group(1))
-                        minutes = int(match.group(2))
+                        hours = int(match.group(1)) if match.group(1) else 0
+                        minutes = int(match.group(2)) if match.group(2) else 0
                         total_minutes = hours * 60 + minutes
-                    else:
-                        match = re.search(r'(\d+)分钟',order_mi)
-                        if match:
-                            minutes = int(match.group(1))
-                            total_minutes = minutes
+                        
+                        if total_minutes >= 10:
+                            print(f"订单使用时间 {total_minutes} 分钟，大于10分钟")
+                            self.end_order()
                         else:
-                            print("无法匹配有效时间信息")
-                    if total_minutes >= 10:
-                        print("订单使用时间大于10分钟")
-                        self.end_order()
+                            print(f"订单使用时间 {total_minutes} 分钟，小于10分钟，执行中途开门操作")
+                            self.unlocker()
                     else:
-                        print("订单使用时间小于10分钟，执行中途开门操作")
-                        self.unlocker()
-                except:
-                    print(f"已结束{i}个订单，停止循环")
+                        print("无法匹配有效时间信息")
+                except Exception as e:
+                    print(f"已结束{i}个订单，停止循环：{str(e)}")
             else:
                 print("未发现订单，跳过")
                 break
