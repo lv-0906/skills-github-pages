@@ -1,7 +1,33 @@
 import minium
-from time import sleep
-import json
-import test_end_order
+import sys
+import logging
+
+# 配置 logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("test.log"),  # 记录到文件
+        logging.StreamHandler()  # 显示在终端
+    ]
+)
+# 把 print() 重定向到 logging
+class LoggerWriter:
+    def __init__(self, level):
+        self.level = level
+
+    def write(self, message):
+        if message.strip():  # 过滤空行
+            self.level(message)
+
+    def flush(self):
+        pass
+
+# 让 print() 输出到日志
+sys.stdout = LoggerWriter(logging.info)  
+sys.stderr = LoggerWriter(logging.error)  
+
+
 
 class Testorder(minium.MiniTest):
     def test_ceart_order(self):
@@ -10,194 +36,6 @@ class Testorder(minium.MiniTest):
             self.order()
         self.logger.info("下单操作已执行 5 次，停止循环")
         print("下单操作已执行 5 次，停止循环")
-        test_end_order.End_order
-#     def scan_result(self):
-#         mock_result = {
-#   "RequestId": "ad55ee72",
-#   "Result": {
-#     "shop": {
-#       "id": "1848721103114694656",
-#       "name": "唐总测试网点",
-#       "use_balance_enable": False,
-#       "use_balance_deposit_enable": False,
-#       "force_choose_enable": False,
-#       "fetch_confirm_enable": True,
-#       "coupon_enable": True,
-#       "mt_coupon_enable": False,
-#       "vip_coupon_enable": True,
-#       "vip_type": "maytek",
-#       "auto_get_phone_enable": False,
-#       "pos_pay_enable": False,
-#       "h5_pay_config": {
-#         "default_pay_channel": "alipay",
-#         "pay_channel": ["alipay"]
-#       },
-#       "status": 1,
-#       "area_code": "+86",
-#       "country": "CN",
-#       "currency": {
-#         "value": "CNY",
-#         "label": "人民币",
-#         "symbol": "￥"
-#       },
-#       "no_problem_coupon_enabled": False
-#     },
-#     "site": {
-#       "id": "1848721843749089280",
-#       "name": "【小铁测试网点】",
-#       "status": 1,
-#       "open_time": 0,
-#       "close_time": 0,
-#       "fetch_types": ["phone_pass"],
-#       "require_phone": [],
-#       "related_sites": {
-#         "iamge_url": "https://admin-file.xironiot.com/xiaoiconadmin/1737201989552_939394_13050707859489.jpg",
-#         "sites": [
-#           {
-#             "id": "1783404189537189888",
-#             "name": "【测试】小梅沙网点"
-#           }
-#         ]
-#       },
-#       "follow_enable": False,
-#       "identity_enable": False,
-#       "location_overview_enable": False,
-#       "user_privacy_enable": True,
-#       "user_privacy_html": {
-#         "en": "https://admin-file.xironiot.com/privacy/1737026720681_144741_en.html",
-#         "ms": "https://admin-file.xironiot.com/privacy/1737026720777_569095_ms.html",
-#         "zh": "https://admin-file.xironiot.com/privacy/1737026720628_859834_zh.html",
-#         "zh_tw": "https://admin-file.xironiot.com/privacy/1737026720729_387282_zh_tw.html"
-#       },
-#       "force_select_locker_enable": False,
-#       "locker_type_text": {
-#         "1": {
-#           "en": "Designed to accommodate small bags and shopping bags",
-#           "ms": "Boleh simpan beg kecil dan beg belanja",
-#           "zh": "可存放小包、购物袋",
-#           "zh_tw": "可存放小包、購物袋"
-#         },
-#         "2": {
-#           "en": "Suitable for storing large backpacks and 18-inch suitcases.",
-#           "ms": "Boleh menyimpan beg besar dan koper 18 inci.",
-#           "zh": "可存放大型背包，18寸行李箱",
-#           "zh_tw": "可存放大型背包、18寸行李箱"
-#         },
-#         "3": {
-#           "en": "Able to accommodate a 26-inch suitcase",
-#           "ms": "Boleh simpan beg 26 inci",
-#           "zh": "可存放26寸行李箱",
-#           "zh_tw": "可存放26寸行李箱"
-#         },
-#         "4": {
-#           "en": "Capable of storing large luggage",
-#           "ms": "Boleh simpan beg besar",
-#           "zh": "可存放大件行李",
-#           "zh_tw": "可存放大件行李"
-#         }
-#       },
-#       "business_model": "locker",
-#       "disclaimer_enabled": True,
-#       "province": "广东省",
-#       "city": "深圳市",
-#       "region": "南山区",
-#       "address": "智恒产业园"
-#     },
-#     "cabinet": {
-#       "id": "1801151630067064832",
-#       "name": "c82629870916",
-#       "type": 1,
-#       "status": 1,
-#       "online": False,
-#       "address": "A",
-#       "fake": True,
-#       "free_locker_count": 8,
-#       "locker_types": [1],
-#       "locker_count_map": {
-#         "1": 8
-#       },
-#       "binding_cabinet_id": "",
-#       "is_reverse": False,
-#       "binding_config": "",
-#       "max_unlock_count": 1000,
-#       "rental_period_map": {
-#         "1": [1]
-#       }
-#     },
-#     "lockers": [
-#       {
-#         "id": "1826589696739819520",
-#         "name": "008",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1801151902662639616",
-#         "name": "005",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1801151902675222528",
-#         "name": "006",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1826589696714653696",
-#         "name": "007",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1801151902650056704",
-#         "name": "004",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1803318309469659136",
-#         "name": "002",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1801151902553587712",
-#         "name": "003",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       },
-#       {
-#         "id": "1803318309448687616",
-#         "name": "001",
-#         "status": 1,
-#         "type": 1,
-#         "door_status": 1
-#       }
-#     ],
-#     "face": {
-#       "face_url": "",
-#       "face_id": ""
-#     }
-#   }
-# }
-#         raw_data = json.dumps(mock_result["Result"])
-#
-#         self.mini.mock_wx_method(
-#             "scanCode",
-#             result={
-#                 "success":True,
-#                 "charSet": "UTF-8",
-#                 "rawData": raw_data
-#             }
-#         )
     def payfor_order(self):
         password = self.page.get_element("input[placeholder='输入4位数字，建议用生日']")
         password.input("1111")
@@ -257,7 +95,7 @@ class Testorder(minium.MiniTest):
                 self.page.wait_for("//button[text()='点击上传']", max_timeout=3)
                 print('暂不支持下单人脸')
                 self.logger.info('暂不支持下单人脸')
-        found = self.page.wait_for("//button[text()='寄存完成']", max_timeout=3)
+        found = self.page.wait_for("//button[text()='寄存完成']", max_timeout=5)
         if found:
             button_wc = self.page.get_element("//button[text()='寄存完成']")
             button_wc.tap()
@@ -280,3 +118,191 @@ class Testorder(minium.MiniTest):
             button_sao.tap()
         else:
             self.guocheng()
+#     def scan_result(self):
+                #         mock_result = {
+                #   "RequestId": "ad55ee72",
+                #   "Result": {
+                #     "shop": {
+                #       "id": "1848721103114694656",
+                #       "name": "唐总测试网点",
+                #       "use_balance_enable": False,
+                #       "use_balance_deposit_enable": False,
+                #       "force_choose_enable": False,
+                #       "fetch_confirm_enable": True,
+                #       "coupon_enable": True,
+                #       "mt_coupon_enable": False,
+                #       "vip_coupon_enable": True,
+                #       "vip_type": "maytek",
+                #       "auto_get_phone_enable": False,
+                #       "pos_pay_enable": False,
+                #       "h5_pay_config": {
+                #         "default_pay_channel": "alipay",
+                #         "pay_channel": ["alipay"]
+                #       },
+                #       "status": 1,
+                #       "area_code": "+86",
+                #       "country": "CN",
+                #       "currency": {
+                #         "value": "CNY",
+                #         "label": "人民币",
+                #         "symbol": "￥"
+                #       },
+                #       "no_problem_coupon_enabled": False
+                #     },
+                #     "site": {
+                #       "id": "1848721843749089280",
+                #       "name": "【小铁测试网点】",
+                #       "status": 1,
+                #       "open_time": 0,
+                #       "close_time": 0,
+                #       "fetch_types": ["phone_pass"],
+                #       "require_phone": [],
+                #       "related_sites": {
+                #         "iamge_url": "https://admin-file.xironiot.com/xiaoiconadmin/1737201989552_939394_13050707859489.jpg",
+                #         "sites": [
+                #           {
+                #             "id": "1783404189537189888",
+                #             "name": "【测试】小梅沙网点"
+                #           }
+                #         ]
+                #       },
+                #       "follow_enable": False,
+                #       "identity_enable": False,
+                #       "location_overview_enable": False,
+                #       "user_privacy_enable": True,
+                #       "user_privacy_html": {
+                #         "en": "https://admin-file.xironiot.com/privacy/1737026720681_144741_en.html",
+                #         "ms": "https://admin-file.xironiot.com/privacy/1737026720777_569095_ms.html",
+                #         "zh": "https://admin-file.xironiot.com/privacy/1737026720628_859834_zh.html",
+                #         "zh_tw": "https://admin-file.xironiot.com/privacy/1737026720729_387282_zh_tw.html"
+                #       },
+                #       "force_select_locker_enable": False,
+                #       "locker_type_text": {
+                #         "1": {
+                #           "en": "Designed to accommodate small bags and shopping bags",
+                #           "ms": "Boleh simpan beg kecil dan beg belanja",
+                #           "zh": "可存放小包、购物袋",
+                #           "zh_tw": "可存放小包、購物袋"
+                #         },
+                #         "2": {
+                #           "en": "Suitable for storing large backpacks and 18-inch suitcases.",
+                #           "ms": "Boleh menyimpan beg besar dan koper 18 inci.",
+                #           "zh": "可存放大型背包，18寸行李箱",
+                #           "zh_tw": "可存放大型背包、18寸行李箱"
+                #         },
+                #         "3": {
+                #           "en": "Able to accommodate a 26-inch suitcase",
+                #           "ms": "Boleh simpan beg 26 inci",
+                #           "zh": "可存放26寸行李箱",
+                #           "zh_tw": "可存放26寸行李箱"
+                #         },
+                #         "4": {
+                #           "en": "Capable of storing large luggage",
+                #           "ms": "Boleh simpan beg besar",
+                #           "zh": "可存放大件行李",
+                #           "zh_tw": "可存放大件行李"
+                #         }
+                #       },
+                #       "business_model": "locker",
+                #       "disclaimer_enabled": True,
+                #       "province": "广东省",
+                #       "city": "深圳市",
+                #       "region": "南山区",
+                #       "address": "智恒产业园"
+                #     },
+                #     "cabinet": {
+                #       "id": "1801151630067064832",
+                #       "name": "c82629870916",
+                #       "type": 1,
+                #       "status": 1,
+                #       "online": False,
+                #       "address": "A",
+                #       "fake": True,
+                #       "free_locker_count": 8,
+                #       "locker_types": [1],
+                #       "locker_count_map": {
+                #         "1": 8
+                #       },
+                #       "binding_cabinet_id": "",
+                #       "is_reverse": False,
+                #       "binding_config": "",
+                #       "max_unlock_count": 1000,
+                #       "rental_period_map": {
+                #         "1": [1]
+                #       }
+                #     },
+                #     "lockers": [
+                #       {
+                #         "id": "1826589696739819520",
+                #         "name": "008",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1801151902662639616",
+                #         "name": "005",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1801151902675222528",
+                #         "name": "006",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1826589696714653696",
+                #         "name": "007",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1801151902650056704",
+                #         "name": "004",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1803318309469659136",
+                #         "name": "002",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1801151902553587712",
+                #         "name": "003",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       },
+                #       {
+                #         "id": "1803318309448687616",
+                #         "name": "001",
+                #         "status": 1,
+                #         "type": 1,
+                #         "door_status": 1
+                #       }
+                #     ],
+                #     "face": {
+                #       "face_url": "",
+                #       "face_id": ""
+                #     }
+                #   }
+                # }
+                #         raw_data = json.dumps(mock_result["Result"])
+                #
+                #         self.mini.mock_wx_method(
+                #             "scanCode",
+                #             result={
+                #                 "success":True,
+                #                 "charSet": "UTF-8",
+                #                 "rawData": raw_data
+                #             }
+                #         )
+
