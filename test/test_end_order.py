@@ -11,7 +11,7 @@ class test_End_order(minium.MiniTest):
             img.move(220, 0, 800, smooth=True)
     def scan_Code(self):
         sleep(3)
-        scan_code = self.page.wait_for("//view[text()='请扫描您存包的储物柜二维码']",max_timeout=3)#这里有问题！！！
+        scan_code = self.page.wait_for("//view[text()='请扫描您存包的储物柜二维码']",max_timeout=3)
         if scan_code:
             # scan = self.page.get_element("//button[view[contains(text(), '扫码取包')]]")
             scan = self.page.get_element("//button[contains(., '扫码取包')]")
