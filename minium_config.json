@@ -1,10 +1,11 @@
 {
   "debug":true,
-  "close_ide":false,
   "appid":"wx8af938e71b256cd0",
-  "platform":"ide",
+  "platform":"android",
   "project_path":"D:\\Pycharmobjeck\\mp-weixin",
   "dev_tool_path":"D:\\wechat tools\\tools\\cli.bat",
   "enable_mock": true,
-  "auto_authorize": true
+  "device_desire": {
+    "serial":"befa2bfb"
+  }
   }
