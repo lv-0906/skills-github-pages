@@ -2,6 +2,7 @@ from time import sleep
 import minium
 import sys
 import logging
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -90,6 +91,8 @@ class Testorder(minium.MiniTest):
             print("未成功下单")
     def order(self):
         # 点击存包按钮
+        sleep(3)
+        self.page.get_element("button").click()
         self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
         button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
         button_cunb1.tap()
@@ -103,23 +106,3 @@ class Testorder(minium.MiniTest):
             button_sao.tap()
         else:
             self.guocheng()
-    def passWord(self):
-        try:
-            sleep(10)
-            self.native.text_click("0",iscontain=True)
-            sleep(0.5)
-            self.native.text_click("8",iscontain=True)
-            sleep(0.5)
-            self.native.text_click("1",iscontain=True)
-            sleep(0.5)
-            self.native.text_click("5",iscontain=True)
-            sleep(0.5)
-            self.native.text_click("1",iscontain=True)
-            sleep(0.5)
-            self.native.text_click("2",iscontain=True)
-            money = self.native.get_pay_value()
-            print("已输入支付密码",money)
-            sleep(5)
-            self.native.text_click("完成",iscontain=True)
-        except:
-            print('未输入密码')
