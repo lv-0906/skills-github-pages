@@ -44,7 +44,7 @@ class Testorder(minium.MiniTest):
         pay_order2 = self.page.get_element('pay-popup>>>uni-popup>>>button')
         pay_order2.tap()
         print('已点击二次确认下单')
-        self.passWord()
+        self
     def guocheng(self):
         try:
             self.page.wait_for('//button[text()="确认"]', max_timeout=5)
