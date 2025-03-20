@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "debug_mode":"info",
   "appid":"wx4100f48d9da75978",
   "platform":"ide",
@@ -6,4 +7,15 @@
   "dev_tool_path":"D:\\微信web开发者工具\\cli.bat",
   "enable_mock": true,
   "auto_authorize": true
+=======
+  "debug":true,
+  "appid":"wx8af938e71b256cd0",
+  "platform":"android",
+  "project_path":"D:\\Pycharmobjeck\\mp-weixin",
+  "dev_tool_path":"D:\\wechat tools\\tools\\cli.bat",
+  "enable_mock": true,
+  "device_desire": {
+    "serial":"2MN0224718016228"
+  }
+>>>>>>> company
   }
