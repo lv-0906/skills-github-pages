@@ -15,7 +15,6 @@ class test_End_order(minium.MiniTest):
             print("已点击不开门续费")
             overMoney = self.page.get_element_by_xpath("(//view[contains(@class, 'list')])[2]")
             om = overMoney.inner_text
-            print(f"获取到的文本：{om}")
             if om:
                 mon = r"欠费 ¥(\d+(?:\.\d+)?)\s*.*?余额支付\s*¥(\d+(?:\.\d+)?)\s*.*?微信支付\s*¥(\d+(?:\.\d+)?)"
                 money = re.search(mon, om,re.DOTALL)
