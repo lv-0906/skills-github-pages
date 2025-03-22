@@ -5,6 +5,7 @@
   "project_path":"D:\\Pycharmobjeck\\mp-weixin",
   "dev_tool_path":"D:\\wechat tools\\tools\\cli.bat",
   "enable_mock": true,
+  "auto_relaunch": false,
   "device_desire": {
     "serial":"2MN0224718016228"
   }

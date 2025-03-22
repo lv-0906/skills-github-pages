@@ -25,11 +25,11 @@ class LoggerWriter:
 sys.stdout = LoggerWriter(logging.info)  
 sys.stderr = LoggerWriter(logging.error)  
 class Testorder(minium.MiniTest):
-    def test_ceart_order(self):
-        for i in range(5):
-            print(f"第 {i + 1} 次下单")
-            self.order()
-        print("下单操作已执行 5 次，停止循环")
+    # def test_ceart_order(self):
+    #     for i in range(5):
+    #         print(f"第 {i + 1} 次下单")
+    #         self.order()
+    #     print("下单操作已执行 5 次，停止循环")
     def payfor_order(self):
         password = self.page.get_element("input[placeholder='输入4位数字，建议用生日']")
         password.input("1111")
@@ -91,20 +91,22 @@ class Testorder(minium.MiniTest):
             button_wc.tap()
         else:
             print("未成功下单")
-    def order(self):
+    def test_order(self):
         # 点击存包按钮
-        sleep(3)
-        self.page.get_element("button").click()
-        self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
-        button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
-        button_cunb1.tap()
-        print("请手动识别机柜二维码")
-        self.logger.info("请手动识别机柜二维码")
-        full = self.page.wait_for("//button[text()='扫码存包']",max_timeout=3)
-        if full:
-            print("柜门已满，请更换二维码")
-            self.page.wait_for("//button[text()='返回']",max_timeout=3)
-            button_sao = self.page.get_element("//button[text()='返回']")
-            button_sao.tap()
-        else:
-            self.guocheng()
+        p = self.app.get_current_page()
+        print(p.path)
+        if p.path == "pages/v1/index/index":
+            sleep(3)
+            self.page.get_element("button").click()
+            self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
+            button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
+            button_cunb1.tap()
+            print("请手动识别机柜二维码")
+            self.logger.info("请手动识别机柜二维码")
+            full = self.page.wait_for("//button[text()='扫码存包']",max_timeout=3)
+            if full:
+                print("柜门已满，请更换二维码")
+                self.page.wait_for("//button[text()='返回']",max_timeout=3)
+                button_sao = self.page.get_element("//button[text()='返回']")
+                button_sao.tap()
+        self.guocheng()
