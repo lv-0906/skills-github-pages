@@ -4,7 +4,7 @@
       "case_list": [
         "test_*"
       ],
-      "pkg": "test2.test_main"
+      "pkg": "cass.test_main"
     }
   ]
 }
