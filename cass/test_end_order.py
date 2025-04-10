@@ -1,8 +1,7 @@
 import re
 import minium
 from time import sleep
-from minium.native.wx_native.basenative import T
-from test_passwrod import TestDemo
+from test_password import TestDemo
 
 
 class test_End_order(minium.MiniTest):

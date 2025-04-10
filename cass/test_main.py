@@ -1,8 +1,10 @@
+from re import S
 from time import sleep
 import minium
 import sys
 import logging
-from test_passwrod import TestDemo
+from test_password import TestDemo
+from test_find_locker import TestFindLocker
 
 logging.basicConfig(
     level=logging.INFO,
@@ -25,22 +27,30 @@ class LoggerWriter:
 sys.stdout = LoggerWriter(logging.info)  
 sys.stderr = LoggerWriter(logging.error)  
 class Testorder(minium.MiniTest):
-    # def test_ceart_order(self):
-    #     for i in range(5):
-    #         print(f"第 {i + 1} 次下单")
-    #         self.order()
-    #     print("下单操作已执行 5 次，停止循环")
     def payfor_order(self):
+        # locker_date = self.app.get_storage("__SITE_KEY__")
+        # fetchTypes = locker_date.get("fetch_types")
+        # if fetchTypes == "phone_pass":
         password = self.page.get_element("input[placeholder='输入4位数字，建议用生日']")
-        password.input("1111")
-        print("输入密码1111")
+        if password:
+            password.input("1111")
+            self.capture("已输入密码")
+            print("输入密码1111")
+        else:
+            print("未找到密码输入框")
+            face = self.page.get_element("//view[text()=‘人脸认证']")
+            if face:
+                print('请手动识别人脸,暂不支持自动上传人脸')    
         pay_order = self.page.get_element("view.deposit-footer-pay")
         pay_order.tap()
         print("已点击确认下单")
         self.page.wait_for("button[text()='放弃添加‘]",max_timeout=3) 
         insurance = self.page.get_element("//button[text()='放弃添加']")
-        insurance.tap()
-        print("已放弃添加保险")
+        if insurance:
+            insurance.tap()
+            print("已放弃添加保险")
+        else:
+            print("未开启保险业务")
         self.page.wait_for('pay-popup>>>uni-popup>>>button', max_timeout=2)
         pay_order2 = self.page.get_element('pay-popup>>>uni-popup>>>button')
         pay_order2.tap()
@@ -55,19 +65,8 @@ class Testorder(minium.MiniTest):
             print("已点击确认vip手机号")
         except:
             print("未配置VIP权益")
-        try:
-            self.page.wait_for("[class*='data-v-e63e22f7'][role='img']", max_timeout=3)
-            li_locker = self.page.get_element("[class*='data-v-e63e22f7'][role='img']")
-            li_locker.tap()
-            print("点击第一个柜门类型")
-        except:
-            print("仅有一种柜门类型")
-        try:
-            button_ty = self.page.get_element("//button[text()='确认']")
-            button_ty.tap()
-            print("已确认柜门编号")
-        except:
-            print("未打开强制选择柜门")
+        find_locker = TestFindLocker()
+        find_locker.test_find_locker()
         try:
             sleep(3)
             button_xieyi = self.page.get_element('mot-modal>>>uni-popup>>>button')
@@ -95,9 +94,9 @@ class Testorder(minium.MiniTest):
         # 点击存包按钮
         p = self.app.get_current_page()
         print(p.path)
-        if p.path == "pages/v1/index/index":
+        if p.path == "/pages/v1/index/index":
+            self.capture("首页")
             sleep(3)
-            self.page.get_element("button").click()
             self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
             button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
             button_cunb1.tap()
