@@ -4,8 +4,7 @@ from time import sleep
 from minium.native.wx_native.androidnative import WXAndroidNative
 
 class test_End_order(minium.MiniTest):
-    def Renewal(self):
-        # 判断订单是否欠费，如果欠费则进行续费
+    def Renewal(self):    # 判断订单是否欠费，如果欠费则进行续费
         renewal = self.page.wait_for('//view[contains(class,warning-plain)]')
         if renewal:
             print("订单已欠费")
@@ -35,16 +34,15 @@ class test_End_order(minium.MiniTest):
                             print("使用余额支付")
                             return True
                     except:
-                        print("未支付成功")
+                        print("未找到元素")
                         return False
             else:
                 print("未获取到金额")
                 return False
         else:
             print("订单未欠费")
-            return True
-        
-    def scan_Code(self):
+            return True 
+    def scan_Code(self):  #判断是否开启二次确认扫码 如果开启则需要手动扫码
         sleep(3)
         scan_code = self.page.wait_for("//view[text()='请扫描您存包的储物柜二维码']",max_timeout=3)
         if scan_code:
@@ -54,13 +52,13 @@ class test_End_order(minium.MiniTest):
             self.page.wait_for("//view[text()='还要用']",max_timeout=10)
         else:
             print("未开启二次扫码确认或未扫码")
-    def unlocker(self):
-        # 中途开门
+    def unlocker(self):   # 中途开门
         one_button = self.page.get_element("//button[contains(@class,'mot-button--mot-button-normal-square')]")
         button_class = one_button.__getattribute__("class")
-        if "disabled" in button_class:
+        if "disabled" in button_class: #判断是否支持中途开门
             print("不支持中途开门")
         else:
+            one_button.tap() 
             open_locker = self.page.get_element("//view[text()='继续租用柜子']")
             open_locker.tap()
             sleep(2)
@@ -69,54 +67,55 @@ class test_End_order(minium.MiniTest):
             carry_on.tap()
             self.page.wait_for("//button[text()='中途存取完成']")
             print("中途开门成功")
-            sleep(2)
+            sleep(2) 
             accomplish = self.page.get_element("//button[text()='中途存取完成']")
             accomplish.tap()
             print("已返回首页")
-    def endOrder(self):
-            self.page.wait_for("//view[text()='开门并结束']",max_timeout=3)
+    def endOrder(self):   # 结束订单
             end_o = self.page.get_element("//view[text()='开门并结束']")
             if end_o:
                 end_o.tap()
+                self.scan_Code()
+                dis_use = self.page.get_element("//view[text()='不用了']")
+                dis_use.tap()
                 try:
-                    self.scan_Code()
-                    dis_use = self.page.get_element("//view[text()='不用了']")
-                    dis_use.tap()
+                    # 判断订单是否大于10分钟，是则滑动结束
+                    huadong = self.page.wait_for("//view[text()='开门后，寄存将结束']")
+                    if huadong:
+                        img = self.page.get_element("//movable-view[contains(@class,'popup-index--validation-box')]")
+                        img.move(220, 0, 800, smooth=True)
                     try:
-                        # 判断订单是否大于10分钟，是则滑动结束
-                        huadong = self.page.wait_for("//view[text()='开门后，寄存将结束']")
-                        if huadong:
-                            img = self.page.get_element("//movable-view[contains(@class,'popup-index--validation-box')]")
-                            img.move(220, 0, 800, smooth=True)
-                        try:
-                            sleep(3)
-                            fan = self.page.get_element("//button[contains(@class,'mot-button-primary')]")
-                            fan.tap()
-                            print("订单已结束")
-                            sleep(3)
-                        except:
-                            print('未结束订单')
+                        sleep(3)
+                        fan = self.page.get_element("//button[contains(@class,'mot-button-primary')]")
+                        fan.tap()
+                        print("已结束订单")
+                        sleep(3)
                     except:
-                        se = self.page.get_element("//view[text()='您的柜子使用不到十分钟‘]")
-                        if se:
-                            self.page.get_element("//button[hover-class()='mot-button-primary-active']").tap
-                            print("选择取走物品并点击确认结束按钮")
-                            WXAndroidNative.handle_modal(
-                                title="结束寄存",
-                                btn_text="确认结束"
-                            )
-                            e = self.page.get_element("//view[text()='确认']")
-                            if e:
-                                e.tap 
-                                print("订单余额不足")
-                            print("已结束订单")
-
+                        print('未结束订单')
                 except:
-                    print("未弹出二次确认弹窗")
+                    se = self.page.get_element("//view[text()='您的柜子使用不到十分钟‘]")
+                    if se:
+                        self.page.get_element("//button[hover-class()='mot-button-primary-active']").tap
+                        print("选择取走物品并点击确认结束按钮")
+                        WXAndroidNative.handle_modal(
+                            title="结束寄存",
+                            btn_text="确认结束"
+                        )
+                        e = self.page.get_element("//view[text()='确认']")
+                        if e:
+                            e.tap 
+                            cancel = self.page.get_element("//view[text()='返回']")
+                            cancel.tap()
+                            print("订单余额不足")
+                            x = self.Renewal()
+                            if x:
+                                print("订单已续费")
+                                self.endOrder()
+                        print("已结束订单")
             elif(self.Renewal):
                 print("未识别到订单")
     def test_end_orders(self):
-        order_card = self.page.wait_for('//view[contains(@class,"home-order-list")]',max_timeout=3)
+        order_card = self.page.wait_for('//view[contains(@class,"home-order-list")]',max_timeout=3)  #订单卡片
         if order_card:
             print("已找到订单")
             self.Renewal()
@@ -150,7 +149,7 @@ class test_End_order(minium.MiniTest):
                 print("订单未成功续费，跳过")
         else:
             print("未发现订单,跳过")
-    def passWord(self):
+    def passWord(self):#调用微信支付
         try:
             passwords = WXAndroidNative(json_conf={})
             passwords.input_pay_password(psw="981512")

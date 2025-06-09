@@ -1,7 +1,6 @@
 from re import S
 from time import sleep
 import minium
-from .test_password import TestDemo
 from . import FindLocker
 from . import setup_log_redirect
 
@@ -87,5 +86,5 @@ class Testorder(minium.MiniTest):
             pay_order2 = self.page.get_element('pay-popup>>>uni-popup>>>button')
             pay_order2.tap()
             print('已点击二次确认下单')
-            TestDemos = TestDemo()
-            TestDemos.passWord()
+            # TestDemos = TestDemo()
+            # TestDemos.passWord()

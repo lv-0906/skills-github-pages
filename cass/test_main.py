@@ -1,25 +1,37 @@
 from re import S
 from time import sleep
 import minium
-from test_password import TestDemo
-from find_locker import TestFindLocker
+from cass import FindLocker,test_End_order,customize,auth
+from auth import get_client
 
- 
 class Testorder(minium.MiniTest):
     def payfor_order(self):
-        # locker_date = self.app.get_storage("__SITE_KEY__")
-        # fetchTypes = locker_date.get("fetch_types")
-        # if fetchTypes == "phone_pass":
-        password = self.page.get_element("input[placeholder='输入4位数字，建议用生日']")
-        if password:
-            password.input("1111")
-            self.capture("已输入密码")
-            print("输入密码1111")
+        fetch = get_client()
+        # tag = {
+        # '1':'phone_pass',
+        # '2':'face',
+        # '3':'qr_code',
+        # '4':'pad_id_card',
+        # '5':'pad_id_card_direct',
+        # '6':'phone',
+        # '7':'palm_print',
+        # '8':'face',
+        # '9':'pad_face'
+        # }
+        one = 'phone_pass'
+        if one in fetch:
+            self.order()
+            self.phone_pass()
         else:
+            print('暂不支持其他认证模式')
+    def phone_pass(self):      
+        password = self.page.get_element("input[placeholder='输入4位数字，建议用生日']")
+        if not password:
             print("未找到密码输入框")
-            face = self.page.get_element("//view[text()=‘人脸认证']")
-            if face:
-                print('请手动识别人脸,暂不支持自动上传人脸')    
+            self.go_to('pages/v1/index/index')
+        password.input("1111")
+        self.capture("已输入密码")
+        print("输入密码1111")
         pay_order = self.page.get_element("view.deposit-footer-pay")
         pay_order.tap()
         print("已点击确认下单")
@@ -34,8 +46,8 @@ class Testorder(minium.MiniTest):
         pay_order2 = self.page.get_element('pay-popup>>>uni-popup>>>button')
         pay_order2.tap()
         print('已点击二次确认下单')
-        TestDemos = TestDemo()
-        TestDemos.passWord()
+        pay = test_End_order()
+        pay.passWord()
     def guocheng(self):
         try:
             self.page.wait_for('//button[text()="确认"]', max_timeout=5)
@@ -44,8 +56,8 @@ class Testorder(minium.MiniTest):
             print("已点击确认vip手机号")
         except:
             print("未配置VIP权益")
-        find_locker = TestFindLocker()
-        find_locker.test_find_locker()
+        # find_locker = TestFindLocker()
+        # find_locker.test_find_locker()
         try:
             sleep(3)
             button_xieyi = self.page.get_element('mot-modal>>>uni-popup>>>button')
@@ -69,22 +81,25 @@ class Testorder(minium.MiniTest):
             button_wc.tap()
         else:
             print("未成功下单")
-    def test_order(self):
-        # 点击存包按钮
+    def order(self):#判断是否在首页，不是则返回首页
         p = self.app.get_current_page()
         print(p.path)
-        if p.path == "/pages/v1/index/index":
-            self.capture("首页")
-            sleep(3)
-            self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
-            button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
-            button_cunb1.tap()
-            print("请手动识别机柜二维码")
-            self.logger.info("请手动识别机柜二维码")
-            full = self.page.wait_for("//button[text()='扫码存包']",max_timeout=3)
-            if full:
-                print("柜门已满，请更换二维码")
-                self.page.wait_for("//button[text()='返回']",max_timeout=3)
-                button_sao = self.page.get_element("//button[text()='返回']")
-                button_sao.tap()
-        self.guocheng()
+        if not p.path == "/pages/v1/index/index":
+            print("当前页面不是首页")
+            self.app.go_to('pages/v1/index/index')
+            print("已返回首页")
+        self.capture("首页")
+        sleep(3)
+        self.page.wait_for('[class*="home-panel-button"][role="button"]',max_timeout=5)
+        button_cunb1 = self.page.get_element('[class*="home-panel-button"][role="button"]')
+        button_cunb1.tap()
+        print("请手动识别机柜二维码")
+        self.logger.info("请手动识别机柜二维码")
+        full = self.page.wait_for("//button[text()='扫码存包']",max_timeout=3)
+        if full:
+            print("柜门已满，请更换二维码")
+            self.page.wait_for("//button[text()='返回']",max_timeout=3)
+            button_sao = self.page.get_element("//button[text()='返回']")
+            button_sao.tap()
+            print("已返回首页")
+        
