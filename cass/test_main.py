@@ -1,31 +1,10 @@
 from re import S
 from time import sleep
 import minium
-import sys
-import logging
 from test_password import TestDemo
-from test_find_locker import TestFindLocker
+from find_locker import TestFindLocker
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("test.log"),  # 记录到文件
-        logging.StreamHandler()  # 显示在终端
-    ]
- )
-# 把 print() 重定向到 logging
-class LoggerWriter:
-    def __init__(self, level):
-        self.level = level
-    def write(self, message):
-        if message.strip():  # 过滤空行
-            self.level(message)
-    def flush(self):
-        pass
-# 让 print() 输出到日志
-sys.stdout = LoggerWriter(logging.info)  
-sys.stderr = LoggerWriter(logging.error)  
+ 
 class Testorder(minium.MiniTest):
     def payfor_order(self):
         # locker_date = self.app.get_storage("__SITE_KEY__")

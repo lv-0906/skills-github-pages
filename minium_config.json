@@ -1,7 +1,7 @@
 {
   "debug":true,
   "appid":"wx8af938e71b256cd0",
-  "platform":"ide",
+  "platform":"Android",
   "project_path":"D:\\Pycharmobjeck\\mp-weixin",
   "dev_tool_path":"D:\\wechat tools\\tools\\cli.bat",
   "enable_mock": true,
