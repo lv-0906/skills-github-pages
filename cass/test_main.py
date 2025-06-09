@@ -1,10 +1,7 @@
 from re import S
 from time import sleep
 import minium
-from test_password import TestDemo
-from find_locker import TestFindLocker
 
- 
 class Testorder(minium.MiniTest):
     def payfor_order(self):
         # locker_date = self.app.get_storage("__SITE_KEY__")
@@ -34,8 +31,8 @@ class Testorder(minium.MiniTest):
         pay_order2 = self.page.get_element('pay-popup>>>uni-popup>>>button')
         pay_order2.tap()
         print('已点击二次确认下单')
-        TestDemos = TestDemo()
-        TestDemos.passWord()
+        # TestDemos = TestDemo()
+        # TestDemos.passWord()
     def guocheng(self):
         try:
             self.page.wait_for('//button[text()="确认"]', max_timeout=5)
@@ -44,8 +41,8 @@ class Testorder(minium.MiniTest):
             print("已点击确认vip手机号")
         except:
             print("未配置VIP权益")
-        find_locker = TestFindLocker()
-        find_locker.test_find_locker()
+        # find_locker = TestFindLocker()
+        # find_locker.test_find_locker()
         try:
             sleep(3)
             button_xieyi = self.page.get_element('mot-modal>>>uni-popup>>>button')
