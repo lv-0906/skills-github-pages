@@ -1,8 +1,8 @@
 from re import S
 from time import sleep
 import minium
-from cass import FindLocker,test_End_order,customize,auth
-from auth import get_client
+from cass import FindLocker,test_End_order,customize,login
+from login import get_client
 
 class Testorder(minium.MiniTest):
     def payfor_order(self):
@@ -18,8 +18,8 @@ class Testorder(minium.MiniTest):
         # '8':'face',
         # '9':'pad_face'
         # }
-        one = 'phone_pass'
-        if one in fetch:
+        # one = 'phone_pass'
+        if 'phone_pass' in fetch:
             self.order()
             self.phone_pass()
         else:

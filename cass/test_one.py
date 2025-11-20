@@ -2,12 +2,12 @@ from re import S
 from time import sleep
 import minium
 from . import FindLocker
-from . import setup_log_redirect
+from . import LoggerWriter
 
 class Testorder(minium.MiniTest):
     def setUp(self):
         super().setUp()
-        setup_log_redirect()
+        LoggerWriter.setup_log_redirect()
     def test_order(self):
             p = self.app.get_current_page()
             print(p.path)
