@@ -48,6 +48,8 @@ class Testorder(minium.MiniTest):
         print('已点击二次确认下单')
         pay = test_End_order()
         pay.passWord()
+        # TestDemos = TestDemo()
+        # TestDemos.passWord()
     def guocheng(self):
         try:
             self.page.wait_for('//button[text()="确认"]', max_timeout=5)
