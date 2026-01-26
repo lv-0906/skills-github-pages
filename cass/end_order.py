@@ -157,6 +157,3 @@ class test_End_order(minium.MiniTest):
         except Exception as e:
             print(f'未输入密码  异常{e}')
             return False
-
-
-
