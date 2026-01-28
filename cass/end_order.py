@@ -141,7 +141,7 @@ class test_End_order(minium.MiniTest):
                     print("order_mi 为空")
                 if  total_minutes >= 10:
                     print("订单使用时间大于10分钟")
-                    self.end_order()
+                    self.endOrder()
                 else:
                     print("订单使用时间小于10分钟,执行中途开门操作")
                     self.unlocker()

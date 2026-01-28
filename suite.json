@@ -1,9 +1,0 @@
-{
-  "pkg_list": 
-  [
-    {
-      "case_list": ["test_*"],
-      "pkg": "cass.test_main"
-    }
-  ]
-}
