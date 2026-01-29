@@ -1,12 +1,15 @@
 {
-  "debug":true,
+  "debug":false,
   "appid":"wx8af938e71b256cd0",
   "platform":"android",
+  "use_push": true,
   "project_path":"D:\\Pycharmobjeck\\web_client_mini\\dist\\dev\\mp-weixin",
-  "dev_tool_path":"D:\\wechat tools\\tools\\cli.bat",
+  "dev_tool_path":"D:\\wechat tools\\cli.bat",
   "enable_mock": true,
-  "auto_relaunch": true,
-  "test_port": 9421,
+  "auto_relaunch": false,
+  "auto_authorize": true,
+  "auto_capture": "auto",
+  "test_port": 9420,
   "device_desire": {
     "serial":"2MN0224718016228"
   }
